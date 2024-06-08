@@ -6,16 +6,6 @@ import os
 
 load_dotenv()
 
-
-# Add custom CSS to hide the GitHub icon
-hide_github_icon = """
-#GithubIcon {
-  visibility: hidden;
-}
-"""
-st.markdown(hide_github_icon, unsafe_allow_html=True)
-
-# Your app code goes here
 # Get the API token from the environment
 HUGGINGFACEHUB_API_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 #HUGGINGFACEHUB_API_TOKEN='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'
@@ -58,6 +48,13 @@ def name_generator(category, subcategory, name, weight, dimensions, short_descri
 
 st.title("Product Description Generator")
 
+st.write("""
+    **Disclaimer:**
+    1. This is a prototype. Additional fields, including product color, short description, material, warranty, etc., are required to generate meaningful and accurate descriptions.
+    2. The code and model may require adjustments to meet specific requirements for generating perfect descriptions.
+    3. Following implementation, thorough testing is necessary to verify that the output accurately reflects the desired phrases.
+    """)
+
 category = st.text_input("Product Category:")
 subcategory = st.text_input("Subcategory:")
 name = st.text_input("Product Name:")
@@ -68,3 +65,5 @@ short_description = st.text_area("Short Description (optional):")
 if st.button("Generate Description"):
     response = name_generator(category, subcategory, name, weight, dimensions, short_description)
     st.write(response)
+
+st.write("Created by Deepak")
