@@ -7,7 +7,7 @@ import os
 load_dotenv()
 
 # Get the API token from the environment
-HUGGINGFACEHUB_API_TOKEN = "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"
+HUGGINGFACEHUB_API_TOKEN = "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"
 
 if not HUGGINGFACEHUB_API_TOKEN:
     raise ValueError("HUGGINGFACEHUB_API_TOKEN not found in environment variables")
@@ -15,7 +15,7 @@ if not HUGGINGFACEHUB_API_TOKEN:
 @st.cache_data
 def name_generator(category, subcategory, name, weight, dimensions, short_description):
     llm = HuggingFaceEndpoint(repo_id="mistralai/Mistral-7B-Instruct-v0.2",
-                               temperature=0.1, tokens="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")
+                               temperature=0.1, tokens="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")
     
     if short_description:
         template = """I have a product in the {category} category, specifically a {subcategory}. It's called {name}, weighs {weight}, and has dimensions {dimensions}. Here is a short description: {short_description}. I want a description with five key points about this product. Provide the points only."""
