@@ -6,6 +6,16 @@ import os
 
 load_dotenv()
 
+
+# Add custom CSS to hide the GitHub icon
+hide_github_icon = """
+#GithubIcon {
+  visibility: hidden;
+}
+"""
+st.markdown(hide_github_icon, unsafe_allow_html=True)
+
+# Your app code goes here
 # Get the API token from the environment
 HUGGINGFACEHUB_API_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 #HUGGINGFACEHUB_API_TOKEN='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'
