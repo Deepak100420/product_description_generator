@@ -7,7 +7,7 @@ import os
 load_dotenv()
 
 # Get the API token from the environment
-HUGGINGFACEHUB_API_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
+HUGGINGFACEHUB_API_TOKEN = "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"
 
 if not HUGGINGFACEHUB_API_TOKEN:
     raise ValueError("HUGGINGFACEHUB_API_TOKEN not found in environment variables")
